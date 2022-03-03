@@ -59,6 +59,7 @@ public class ending : MonoBehaviour
         pl.ResetDir(true);
         telepurte.Teleport(0, -25, false, true);
         int endingsct = 0;
+        PlayerPrefs.SetInt(key, 1);
         foreach (string endingName in endingsKey)
         {
             if (PlayerPrefs.GetInt(endingName, 0) == 1)
@@ -69,6 +70,5 @@ public class ending : MonoBehaviour
         counter.text = lan.Lanra(endKey)[0] + endingsct.ToString() + "/" + endingsKey.Length;
         title.text = lan.Lanra(Array.Find(endingsKey, element => element == key))[0];
         desc.text = lan.Lanra(Array.Find(endingsKey, element => element == key))[1];
-        PlayerPrefs.SetInt(key, 1);
     }
 }
